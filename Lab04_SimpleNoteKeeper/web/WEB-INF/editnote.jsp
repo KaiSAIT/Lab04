@@ -13,6 +13,8 @@
             <input type="text" name="title" value="${note.title}">
             <h3>Contents</h3>
             <input type="text" name="contents" value="${note.contents}">
+            <br>
+            <input type="submit" value="Save">
         </form>
     <c:if test="${invalidEntry}">
         <p>Invalid Entry. Please enter both the title and the contents.</p>

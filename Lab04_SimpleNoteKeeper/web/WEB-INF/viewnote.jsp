@@ -11,6 +11,6 @@
         <h3>Title: </h3><p>This is the title</p>
         <h3>Contents:</h3>
         <p>Contents go here</p>
-        <a href="viewnote.jsp">Edit</a>
+        <a href="note?edit">Edit</a>
     </body>
 </html>

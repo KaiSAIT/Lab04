@@ -19,7 +19,22 @@ public class NoteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String title = "";
+        String contents = "";
+        title = request.getParameter("title");
+        contents = request.getParameter("contents");
+        
+        Note editNote = new Note(title, contents);
+        
+        request.setAttribute("note", editNote);
+        
+        if ( title == null || title.equals("") || contents == null || contents.equals("") ) {
+            request.setAttribute("invalidEntry", true);
             getServletContext().getRequestDispatcher("/WEB-INF/editnote.jsp").forward(request,response);
+            return;
+        }
+        
+            getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp").forward(request,response);
             return;
     }
 
